@@ -32,3 +32,34 @@ To prevent abuse, the API includes **IP-based rate limiting**: each client IP ca
    ```sh
    git clone https://github.com/Ganeshkante/QuoteAPI-RateLimit-SpringBoot.git
    cd QuoteAPI-RateLimit-SpringBoot
+2. Build & run the project:
+   mvn spring-boot:run
+   
+3. The API will start at:
+   http://localhost:8080
+
+API Endpoints
+Get Random Quote
+
+Request:
+
+GET /api/quote
+
+
+Response (200 OK):
+
+{
+  "quote": "The only way to do great work is to love what you do. - Steve Jobs"
+}
+
+
+Response (429 Too Many Requests):
+
+{
+  "error": "Rate limit exceeded. Try again in 60 seconds."
+}
+
+📖 Swagger Documentation
+
+Once the application is running, access Swagger UI here:
+👉 http://localhost:8080/swagger-ui.html
